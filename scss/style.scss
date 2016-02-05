@@ -1,0 +1,191 @@
+@import 'scss/reset';
+@import 'scss/fonts';
+
+
+/* ======= global styles ====== */
+
+body {
+		margin: 0;
+		background-color: #000;
+}
+
+html {
+	font-size: 16px;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+ }
+
+ img {
+	 max-width: 100%;
+	 height: auto;
+ }
+
+/* ---- content styles ----- */
+
+.container {
+	height: 90vh;
+	transition: all 0.3s ease 0s;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	justify-content: center;
+}
+
+.logo {
+	margin-bottom: 1.5rem;
+}
+
+.logo img {
+	width: 300px;
+}
+
+.search {
+	width: 18.25rem;
+	border-bottom: 1px solid #ffffff;
+}
+
+form label {
+	display: none;
+}
+
+form {
+	display: flex;
+  justify-content: center;
+	align-items: baseline;
+}
+
+#hashtag {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.15rem;
+	font-weight: normal;
+	color: #c2c2c2;
+	background-color: #000000;
+	border: 0px;
+	padding: 0.35rem 2rem;
+	width: 100%;
+}
+
+button {
+	background-color: #000000;
+	cursor: pointer;
+	border: 0px;
+	margin-left: -3rem;
+}
+
+.fa-search {
+	font-size: 1.25rem !important;
+	color: #ffffff;
+}
+
+.hashtag {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: #ffffff;
+	margin-right: -1.25rem;
+	z-index: 100;
+}
+
+.photos li {
+	display: inline;
+}
+
+.photos li img {
+		width: 25%;
+}
+
+.photos p {
+	font-family: "Open Sans", sans-serif;
+	color: #ffffff;
+}
+
+footer {
+	text-align: center;
+	height: 10vh;
+}
+
+.copyright {
+	font-family: "Open Sans", sans-serif;
+	font-weight: lighter;
+	font-size: 0.9rem;
+	color: #c2c2c2;
+}
+
+.copyright span {
+	text-transform: uppercase;
+}
+
+/* -------- utility styles ---------*/
+
+.screen-reader {
+	display: none;
+}
+
+/* =============================== breakpoint - tablet =============================== */
+
+@media all and (min-width: 600px) {
+	header {
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+		justify-content: center;
+	}
+
+	.logo {
+		margin-bottom: 0;
+	}
+
+	.logo img {
+		width: 280px;
+		padding-right: 1.5rem;
+	}
+
+	.search {
+		width: 20rem;
+		margin-bottom: 0.25rem;
+	}
+
+}
+
+/* =============================== breakpoint - desktop =============================== */
+
+
+@media all and (min-width: 1240px) {
+
+	header {
+	  display: flex;
+	  flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-left: 2rem;
+	}
+
+	.logo {
+		margin-bottom: 0;
+		align-self: center;
+	}
+
+	.logo img {
+		width: 280px;
+		padding-right: 1.5rem;
+	}
+
+	.search {
+		width: 20rem;
+		margin-bottom: 0.25rem;
+		align-self: center;
+	}
+
+	footer {
+		text-align: left;
+		height: 10vh;
+		margin-left: 2rem;
+	}
+
+}
