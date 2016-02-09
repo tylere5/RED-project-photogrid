@@ -169,8 +169,9 @@ button {
 	width: 40%;
 }
 
-.loading-img {
-	text-align: center;
+.loader {
+	background: url(images/ajax-loader.gif), no-repeat;
+	background-size: cover, cover;
 }
 
 .error-message {
