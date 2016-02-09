@@ -1,13 +1,19 @@
 $(function () {
   var instaPhotos = '';
   var $photos = $('.photos');
+  var $error = $('.error-message');
+  var $loaderImg = $('.loader');
 
   $('#search-button').on('click', function (event) {
     event.preventDefault();
-
+    $('.loader').html('<img src="/images/ajax-loader.gif"').addClass('loading-img');
     var hashtag = $('#hashtag').val();
 
-    $('.container').css('height', '150px').addClass('header-scroll');
+    $('.container').css('height', '9.5rem').addClass('header-scroll');
+
+    /*$(document).ajaxSend(function (loading) {
+      $loaderImg.addClass('loading-img');
+    });*/
 
     $.ajax({
       dataType: 'jsonp',
@@ -16,7 +22,6 @@ $(function () {
     })
 
     .done(function (instaData) {
-      console.log(instaData);
       $.each(instaData.data, function (index, value) {
         instaPhotos += '<li><div class="instaItem"><a href="' + value.link + '" target="_blank"><img src=' + value.images.standard_resolution.url + '></a>' +
                        '<div class="user-info"><div class="profile-photo"><img src=' + value.user.profile_picture + '></div>' +
@@ -25,10 +30,12 @@ $(function () {
                        '<i class="fa heart-icon"></i>' + value.likes.count + '</div></div></div></div></li>';
       });
 
-      $photos.append(instaPhotos);
+      $photos.empty().append(instaPhotos);
+      instaPhotos = '';
     })
-    .fail(function () {
-      console.log('error');
+
+    .fail(function (instaData) {
+      $error.append('Sorry, please try again.');
     });
   });
 });
