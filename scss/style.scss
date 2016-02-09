@@ -27,7 +27,10 @@ html {
 
 .container {
 	height: 90vh;
-	transition: all 0.3s ease 0s;
+}
+
+.header-scroll {
+	transition: height 1s ease 1s;
 }
 
 header {
@@ -35,10 +38,15 @@ header {
   flex-direction: column;
   align-items: center;
 	justify-content: center;
+	padding: 2.5rem;
+}
+
+.search-area {
+	align-self: center;
 }
 
 .logo {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .logo img {
@@ -46,7 +54,7 @@ header {
 }
 
 .search {
-	width: 18.25rem;
+	width: 18.5rem;
 	border-bottom: 1px solid #ffffff;
 }
 
@@ -62,7 +70,7 @@ form {
 
 #hashtag {
 	font-family: "Open Sans", sans-serif;
-	font-size: 1.15rem;
+	font-size: 1rem;
 	font-weight: normal;
 	color: #c2c2c2;
 	background-color: #000000;
@@ -75,12 +83,18 @@ button {
 	background-color: #000000;
 	cursor: pointer;
 	border: 0px;
-	margin-left: -3rem;
+	margin-left: -2rem;
 }
 
-.fa-search {
-	font-size: 1.25rem !important;
+.search-icon:after {
+	content: "\f002";
+	font-size: 1rem;
+	font-weight: bold;
 	color: #ffffff;
+}
+
+.search-icon:hover {
+	color: #e2231a;
 }
 
 .hashtag {
@@ -92,18 +106,70 @@ button {
 	z-index: 100;
 }
 
-.photos li {
-	display: inline;
+/* --------------------- photo grid ------------------------- */
+
+.photos {
+	margin-bottom: 1.5rem;
 }
 
-.photos li img {
-		width: 25%;
+.instaItem {
+	position: relative;
 }
 
-.photos p {
+.instaItem a img {
+	width: 100%;
+}
+
+.user-info {
+	background: rgba(0,0,0,0.6);
+	align-self: flex-end;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.5rem;
+	position: absolute;
+	bottom: 0rem;
+}
+
+.profile-photo {
+	width: 30%;
+	align-content: flex-start;
+}
+
+.user-social {
 	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
 	color: #ffffff;
+	text-align: right;
+	width: 70%;
+	display: flex;
+	justify-content: flex-end;
 }
+
+.user-social p {
+	margin-bottom: 0.4rem;
+}
+
+.social-inner {
+	align-self: center;
+}
+.comments-icon:after {
+	content: "\f086";
+	padding-right: 0.3rem;
+}
+
+.heart-icon:after {
+	content: "\f004";
+	padding-right: 0.3rem;
+	padding-left: 0.8rem;
+}
+
+.profile-photo img {
+	border-radius: 50%;
+	width: 40%;
+}
+
+/* --------------------- footer ------------------------- */
 
 footer {
 	text-align: center;
@@ -129,8 +195,25 @@ footer {
 
 /* =============================== breakpoint - tablet =============================== */
 
+@media all and (min-width: 480px) {
+
+	.photos {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.photos li {
+		flex: 0 1 50%;
+		max-width: 50%;
+	}
+
+}
+
+/* =============================== breakpoint - large tablet =============================== */
+
 @media all and (min-width: 600px) {
-	header {
+
+	.search-area {
 	  display: flex;
 	  flex-direction: row;
 	  align-items: center;
@@ -151,6 +234,11 @@ footer {
 		margin-bottom: 0.25rem;
 	}
 
+	.photos li {
+		flex: 0 1 33.33%;
+		max-width: 33.33%;
+	}
+
 }
 
 /* =============================== breakpoint - desktop =============================== */
@@ -163,7 +251,7 @@ footer {
 	  flex-direction: row;
 		align-items: flex-start;
 		justify-content: flex-start;
-		margin-left: 2rem;
+		margin-left: 0rem;
 	}
 
 	.logo {
@@ -180,6 +268,11 @@ footer {
 		width: 20rem;
 		margin-bottom: 0.25rem;
 		align-self: center;
+	}
+
+	.photos li {
+		flex: 0 1 25%;
+		max-width: 25%;
 	}
 
 	footer {

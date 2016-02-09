@@ -8,6 +8,7 @@
   </head>
   <body>
     <header class="container">
+      <div class="search-area">
         <section class="logo">
           <h1 class="screen-reader">Instagrid</h1>
           <img src="images/instagrid-logo.svg" alt="Instagrid Logo" />
@@ -17,12 +18,13 @@
             <span class="hashtag">#</span>
             <label>Search for an Instagram hashtag</label>
             <input type="text" name="hashtag" value placeholder="Search for a hashtag" id="hashtag"/>
-            <button type="submit" name="search" value="search"><i class="fa fa-search"></i>
+            <button type="submit" name="search" value="search" id="search-button"><i class="fa search-icon"></i>
               <span class="screen-reader">Search Button</span>
             </button>
           </form>
         </div>
-      </header>
+      </div>
+    </header>
 <!-- =========================== photo grid ===================== -->
     <section>
       <ul class="photos"></ul>

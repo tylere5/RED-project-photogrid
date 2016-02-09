@@ -98,8 +98,10 @@ img {
 
 /* ---- content styles ----- */
 .container {
-  height: 90vh;
-  transition: all 0.3s ease 0s; }
+  height: 90vh; }
+
+.header-scroll {
+  transition: height 1s ease 1s; }
 
 header {
   display: -webkit-flex;
@@ -113,16 +115,22 @@ header {
           align-items: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  padding: 2.5rem; }
+
+.search-area {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
 
 .logo {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1rem; }
 
 .logo img {
   width: 300px; }
 
 .search {
-  width: 18.25rem;
+  width: 18.5rem;
   border-bottom: 1px solid #ffffff; }
 
 form label {
@@ -141,7 +149,7 @@ form {
 
 #hashtag {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: normal;
   color: #c2c2c2;
   background-color: #000000;
@@ -153,11 +161,16 @@ button {
   background-color: #000000;
   cursor: pointer;
   border: 0px;
-  margin-left: -3rem; }
+  margin-left: -2rem; }
 
-.fa-search {
-  font-size: 1.25rem !important;
+.search-icon:after {
+  content: "\f002";
+  font-size: 1rem;
+  font-weight: bold;
   color: #ffffff; }
+
+.search-icon:hover {
+  color: #e2231a; }
 
 .hashtag {
   font-family: "Open Sans", sans-serif;
@@ -167,16 +180,73 @@ button {
   margin-right: -1.25rem;
   z-index: 100; }
 
-.photos li {
-  display: inline; }
+/* --------------------- photo grid ------------------------- */
+.photos {
+  margin-bottom: 1.5rem; }
 
-.photos li img {
-  width: 25%; }
+.instaItem {
+  position: relative; }
 
-.photos p {
+.instaItem a img {
+  width: 100%; }
+
+.user-info {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 0rem; }
+
+.profile-photo {
+  width: 30%;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
+
+.user-social {
   font-family: "Open Sans", sans-serif;
-  color: #ffffff; }
+  font-weight: bold;
+  color: #ffffff;
+  text-align: right;
+  width: 70%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 
+.user-social p {
+  margin-bottom: 0.4rem; }
+
+.social-inner {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+
+.comments-icon:after {
+  content: "\f086";
+  padding-right: 0.3rem; }
+
+.heart-icon:after {
+  content: "\f004";
+  padding-right: 0.3rem;
+  padding-left: 0.8rem; }
+
+.profile-photo img {
+  border-radius: 50%;
+  width: 40%; }
+
+/* --------------------- footer ------------------------- */
 footer {
   text-align: center;
   height: 10vh; }
@@ -195,8 +265,23 @@ footer {
   display: none; }
 
 /* =============================== breakpoint - tablet =============================== */
+@media all and (min-width: 480px) {
+  .photos {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .photos li {
+    -webkit-flex: 0 1 50%;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    max-width: 50%; } }
+
+/* =============================== breakpoint - large tablet =============================== */
 @media all and (min-width: 600px) {
-  header {
+  .search-area {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -216,7 +301,12 @@ footer {
     padding-right: 1.5rem; }
   .search {
     width: 20rem;
-    margin-bottom: 0.25rem; } }
+    margin-bottom: 0.25rem; }
+  .photos li {
+    -webkit-flex: 0 1 33.33%;
+        -ms-flex: 0 1 33.33%;
+            flex: 0 1 33.33%;
+    max-width: 33.33%; } }
 
 /* =============================== breakpoint - desktop =============================== */
 @media all and (min-width: 1240px) {
@@ -233,7 +323,7 @@ footer {
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-left: 2rem; }
+    margin-left: 0rem; }
   .logo {
     margin-bottom: 0;
     -webkit-align-self: center;
@@ -248,6 +338,11 @@ footer {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center; }
+  .photos li {
+    -webkit-flex: 0 1 25%;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+    max-width: 25%; }
   footer {
     text-align: left;
     height: 10vh;
