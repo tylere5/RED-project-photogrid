@@ -11,9 +11,11 @@ $(function () {
 
     $('.container').css('height', '9.5rem').addClass('header-scroll');
 
-    /*$(document).ajaxSend(function (loading) {
-      $loaderImg.addClass('loading-img');
-    });*/
+    $(document).bind("ajaxSend", function(){
+      $(".loader").show();
+    }).bind("ajaxComplete", function(){
+      $(".loader").hide();
+    });
 
     $.ajax({
       dataType: 'jsonp',
