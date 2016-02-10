@@ -41,9 +41,9 @@ gulp.task('watch', function(){
       baseDir: './'
     }
   });
-  gulp.watch(['./scss/stylesheet.scss'], ['sass']);
+  gulp.watch(['./scss/style.scss'], ['sass']);
   gulp.watch(['./js/instagrid.js'], ['uglify']);
-  gulp.watch(['./build/instagrid.js', 'index.html']).on('change', browserSync.reload);
+  gulp.watch(['./build/instagrid.js', 'index.html', './scss/style.scss']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);

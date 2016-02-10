@@ -15,20 +15,22 @@
         </section>
         <div class="search">
           <form>
-            <span class="hashtag">#</span>
-            <label>Search for an Instagram hashtag</label>
+            <span class="hashtag-icon">#</span>
+            <label class="screen-reader">Search for an Instagram hashtag</label>
             <input type="text" name="hashtag" value placeholder="Search for a hashtag" id="hashtag"/>
-            <button type="submit" name="search" value="search" id="search-button"><i class="fa search-icon"></i>
+            <button type="submit" name="search" value="search" id="search-button"><i class="fa fa-search"></i>
               <span class="screen-reader">Search Button</span>
             </button>
           </form>
         </div>
       </div>
+      <div class="loader"></div>
     </header>
+
 <!-- =========================== photo grid ===================== -->
     <section>
+      <h1 class="screen-reader">Instagram photos</h1>
       <ul class="photos"></ul>
-      <div class="loader"></div>
       <p class="error-message"></p>
     </section>
 
