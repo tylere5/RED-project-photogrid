@@ -2,20 +2,19 @@ $(function () {
   var instaPhotos = '';
   var $photos = $('.photos');
   var $error = $('.error-message');
-  var $loaderImg = $('.loader');
 
   $('#search-button').on('click', function (event) {
     event.preventDefault();
-    $('.loader').html('<img src="/images/ajax-loader.gif"').addClass('loading-img');
+
+    $(document).bind('ajaxSend', function () {
+      $('.loader').show();
+    }).bind('ajaxComplete', function () {
+      $('.loader').hide();
+    });
+
     var hashtag = $('#hashtag').val();
 
-    $('.container').css('height', '9.5rem').addClass('header-scroll');
-
-    $(document).bind("ajaxSend", function(){
-      $(".loader").show();
-    }).bind("ajaxComplete", function(){
-      $(".loader").hide();
-    });
+    $('.container').css('height', '8rem').addClass('header-scroll');
 
     $.ajax({
       dataType: 'jsonp',
@@ -37,7 +36,7 @@ $(function () {
     })
 
     .fail(function (instaData) {
-      $error.append('Sorry, please try again.');
+      $error.append('Oops, something went wrong. Please try again.');
     });
   });
 });
