@@ -1,12 +1,10 @@
 /* ---- content styles ----- */
 
 .container {
-	height: 90vh;
-}
+	height: 90vh; }
 
 .header-scroll {
-	transition: height 1s ease 1s;
-}
+	transition: height 1s ease 1s; }
 
 header {
   display: flex;
@@ -20,17 +18,14 @@ header {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 1.5rem;
-	}
+		padding: 1.5rem; }
 
 	@include desktop {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		justify-content: flex-start;
-		margin-left: 0rem;
-	}
-}
+		margin-left: 0rem; } }
 
 .search-area {
 	align-self: center;
@@ -39,36 +34,28 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: center;
-	}
-}
+		justify-content: center; } }
 
 .logo {
 	margin-bottom: 1rem;
 
 	@include tablet-large {
-		margin-bottom: 0;
-	}
+		margin-bottom: 0; }
 
 	@include desktop {
 		margin-bottom: 0;
-		align-self: center;
-	}
+		align-self: center; }
 
 	img {
 		width: 300px;
 
 		@include tablet-large {
 			width: 280px;
-			padding-right: 1.5rem;
-		}
+			padding-right: 1.5rem; }
 
 		@include desktop {
 			width: 280px;
-			padding-right: 1.5rem;
-		}
-	}
-}
+			padding-right: 1.5rem; } } }
 
 .search {
 	width: 18.5rem;
@@ -76,15 +63,12 @@ header {
 
 	@include tablet-large {
 		width: 20rem;
-		margin-bottom: 0.25rem;
-	}
+		margin-bottom: 0.25rem; }
 
 	@include desktop {
 		width: 20rem;
 		margin-bottom: 0.25rem;
-		align-self: center;
-	}
-}
+		align-self: center; } }
 
 form {
 	display: flex;
@@ -92,9 +76,7 @@ form {
 	align-items: baseline;
 
 	form label {
-		display: none;
-	}
-}
+		display: none; } }
 
 #hashtag {
 	font-family: "Open Sans", sans-serif;
@@ -104,8 +86,7 @@ form {
 	background-color: #000000;
 	border: 0px;
 	padding: 0.35rem 2rem;
-	width: 100%;
-}
+	width: 100%; }
 
 button {
 	font-size: 1.1rem;
@@ -117,9 +98,7 @@ button {
 	margin-left: -2rem;
 
 	&:hover {
-	color: #e2231a;
-	}
-}
+	color: #e2231a; } }
 
 .hashtag-icon {
 	font-family: "Open Sans", sans-serif;
@@ -127,16 +106,15 @@ button {
 	font-weight: bold;
 	color: #ffffff;
 	margin-right: -1.25rem;
-	z-index: 100;
-}
+	z-index: 100; }
 
 .loader {
+	display: none;
 	background: url('../../images/ajax-loader.gif') no-repeat;
 	background-size: cover, cover;
-	width: 5rem;
-	height: 5rem;
-	margin: 1rem auto 0;
-}
+	width: 38px;
+	height: 38px;
+	margin: 1rem auto 0; }
 
 /* --------------------- photo grid ------------------------- */
 
@@ -145,36 +123,28 @@ button {
 
 	@include tablet {
 		display: flex;
-		flex-wrap: wrap;
-	}
+		flex-wrap: wrap; }
 
 	li {
 		max-width: 100%;
 
 		@include tablet {
 			flex: 0 1 50%;
-			max-width: 50%;
-		}
+			max-width: 50%; }
 
 		@include tablet-large {
 			flex: 0 1 33.33%;
-			max-width: 33.33%;
-		}
+			max-width: 33.33%; }
 
 		@include desktop {
 			flex: 0 1 25%;
-			max-width: 25%;
-		}
-	}
-}
+			max-width: 25%; } } }
 
 .instaItem {
 	position: relative;
 
 	a img {
-		width: 100%;
-	}
-}
+		width: 100%; } }
 
 .user-info {
 	background: rgba(0,0,0,0.6);
@@ -184,8 +154,7 @@ button {
 	width: 100%;
 	padding: 0.5rem;
 	position: absolute;
-	bottom: 0rem;
-}
+	bottom: 0rem; }
 
 .profile-photo {
 	width: 30%;
@@ -193,14 +162,11 @@ button {
 
 	@include tablet-large {
 		width: 50%;
-		align-content: flex-start;
-	}
+		align-content: flex-start; }
 
 	img {
 		border-radius: 50%;
-		width: 40%;
-	}
-}
+		width: 40%; } }
 
 .user-social {
 	font-family: "Open Sans", sans-serif;
@@ -212,23 +178,18 @@ button {
 	justify-content: flex-end;
 
 	p {
-		margin-bottom: 0.4rem;
-	}
-}
+		margin-bottom: 0.4rem; } }
 
 .social-inner {
-	align-self: center;
-}
+	align-self: center; }
 .comments-icon:after {
 	content: "\f086";
-	padding-right: 0.3rem;
-}
+	padding-right: 0.3rem; }
 
 .heart-icon:after {
 	content: "\f004";
 	padding-right: 0.3rem;
-	padding-left: 0.8rem;
-}
+	padding-left: 0.8rem; }
 
 .error-message {
 	font-family: "Open Sans", sans-serif;
@@ -236,8 +197,7 @@ button {
 	font-size: 0.8rem;
 	color: #ffffff;
 	text-align: center;
-	margin-bottom: 2rem;
-}
+	margin-bottom: 2rem; }
 
 /* --------------------- footer ------------------------- */
 
@@ -248,9 +208,7 @@ footer {
 	@include desktop {
 		text-align: left;
 		height: 10vh;
-		margin-left: 2rem;
-	}
-}
+		margin-left: 2rem; } }
 
 .copyright {
 	font-family: "Open Sans", sans-serif;
@@ -259,6 +217,4 @@ footer {
 	color: #c2c2c2;
 
 	span {
-		text-transform: uppercase;
-	}
-}
+		text-transform: uppercase; } }
